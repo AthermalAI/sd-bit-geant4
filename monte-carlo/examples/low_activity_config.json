@@ -1,0 +1,11 @@
+{
+  "dt": 1e-9,
+  "total_time": 1e-3,
+  "lambda_decay": 1e3,
+  "Ed_mean": 0.05,
+  "delta_E": 0.05,
+  "Vbias": 0.03,
+  "Voffset": 0.0,
+  "window_size": 1000,
+  "seed": 42
+}

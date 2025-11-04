@@ -1,0 +1,30 @@
+# Macro file for sd-bit simulation
+#
+# This macro runs a basic sd-bit simulation with Am-241 decay events
+
+# Verbose settings
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 0
+
+# Initialize kernel
+/run/initialize
+
+# Set random seed
+/random/setSeeds 12345 67890
+
+# Particle gun settings (handled by PrimaryGeneratorAction)
+# The primary generator automatically sets up Am-241 decay
+
+# Analysis settings
+/analysis/setFileName sd_bit_results
+/analysis/h1/setTitle 0 "Energy Deposition in Core"
+/analysis/h1/setXaxis 0 0 10 MeV
+/analysis/h1/setYaxis 0 0 1000
+
+# Run simulation
+/run/beamOn 100000
+
+# Print statistics
+/run/printProgress 10000

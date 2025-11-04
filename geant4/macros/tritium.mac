@@ -1,0 +1,30 @@
+# Macro file for tritium-based sd-bit simulation
+#
+# This macro configures the simulation for Tritium (H-3) beta decay
+
+# Verbose settings
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 0
+
+# Initialize kernel
+/run/initialize
+
+# Set random seed
+/random/setSeeds 54321 98765
+
+# Configure for tritium (would need implementation in PrimaryGeneratorAction)
+# /sdbit/isotope tritium
+
+# Analysis settings
+/analysis/setFileName sd_bit_tritium_results
+/analysis/h1/setTitle 0 "Energy Deposition in Core (Tritium)"
+/analysis/h1/setXaxis 0 0 20 keV
+/analysis/h1/setYaxis 0 0 1000
+
+# Run simulation with more events (tritium has lower energy)
+/run/beamOn 1000000
+
+# Print statistics
+/run/printProgress 50000
